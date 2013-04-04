@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8086ED2A170CAF390063AA5F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED29170CAF390063AA5F /* main.cpp */; };
+		8086ED2C170CAF390063AA5F /* Puyo.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8086ED2B170CAF390063AA5F /* Puyo.1 */; };
+		8086ED37170CB0190063AA5F /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED35170CB0190063AA5F /* Event.cpp */; };
+		8086ED3A170CB0250063AA5F /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED38170CB0250063AA5F /* EventManager.cpp */; };
+		8086ED3E170CB4080063AA5F /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED3C170CB4080063AA5F /* Board.cpp */; };
+		8086ED41170CB4490063AA5F /* Piece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED3F170CB4490063AA5F /* Piece.cpp */; };
+		8086ED44170CB5D50063AA5F /* Puyo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED42170CB5D50063AA5F /* Puyo.cpp */; };
+		8086ED47170CCDA50063AA5F /* BoardView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8086ED45170CCDA50063AA5F /* BoardView.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8086ED24170CAF390063AA5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8086ED2C170CAF390063AA5F /* Puyo.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8086ED26170CAF390063AA5F /* Puyo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Puyo; sourceTree = BUILT_PRODUCTS_DIR; };
+		8086ED29170CAF390063AA5F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8086ED2B170CAF390063AA5F /* Puyo.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Puyo.1; sourceTree = "<group>"; };
+		8086ED35170CB0190063AA5F /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		8086ED36170CB0190063AA5F /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		8086ED38170CB0250063AA5F /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
+		8086ED39170CB0250063AA5F /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		8086ED3B170CB0660063AA5F /* EventObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventObserver.h; sourceTree = "<group>"; };
+		8086ED3C170CB4080063AA5F /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
+		8086ED3D170CB4080063AA5F /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		8086ED3F170CB4490063AA5F /* Piece.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Piece.cpp; sourceTree = "<group>"; };
+		8086ED40170CB4490063AA5F /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
+		8086ED42170CB5D50063AA5F /* Puyo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Puyo.cpp; sourceTree = "<group>"; };
+		8086ED43170CB5D50063AA5F /* Puyo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puyo.h; sourceTree = "<group>"; };
+		8086ED45170CCDA50063AA5F /* BoardView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardView.cpp; sourceTree = "<group>"; };
+		8086ED46170CCDA50063AA5F /* BoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8086ED23170CAF390063AA5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8086ED1D170CAF390063AA5F = {
+			isa = PBXGroup;
+			children = (
+				8086ED28170CAF390063AA5F /* Puyo */,
+				8086ED27170CAF390063AA5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8086ED27170CAF390063AA5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8086ED26170CAF390063AA5F /* Puyo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8086ED28170CAF390063AA5F /* Puyo */ = {
+			isa = PBXGroup;
+			children = (
+				8086ED32170CAFD10063AA5F /* EventsManager */,
+				8086ED33170CAFD10063AA5F /* GameEngine */,
+				8086ED34170CAFD10063AA5F /* Interface */,
+				8086ED29170CAF390063AA5F /* main.cpp */,
+				8086ED2B170CAF390063AA5F /* Puyo.1 */,
+			);
+			path = Puyo;
+			sourceTree = "<group>";
+		};
+		8086ED32170CAFD10063AA5F /* EventsManager */ = {
+			isa = PBXGroup;
+			children = (
+				8086ED35170CB0190063AA5F /* Event.cpp */,
+				8086ED36170CB0190063AA5F /* Event.h */,
+				8086ED38170CB0250063AA5F /* EventManager.cpp */,
+				8086ED39170CB0250063AA5F /* EventManager.h */,
+				8086ED3B170CB0660063AA5F /* EventObserver.h */,
+			);
+			path = EventsManager;
+			sourceTree = "<group>";
+		};
+		8086ED33170CAFD10063AA5F /* GameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				8086ED3C170CB4080063AA5F /* Board.cpp */,
+				8086ED3D170CB4080063AA5F /* Board.h */,
+				8086ED3F170CB4490063AA5F /* Piece.cpp */,
+				8086ED40170CB4490063AA5F /* Piece.h */,
+				8086ED42170CB5D50063AA5F /* Puyo.cpp */,
+				8086ED43170CB5D50063AA5F /* Puyo.h */,
+			);
+			path = GameEngine;
+			sourceTree = "<group>";
+		};
+		8086ED34170CAFD10063AA5F /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				8086ED45170CCDA50063AA5F /* BoardView.cpp */,
+				8086ED46170CCDA50063AA5F /* BoardView.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8086ED25170CAF390063AA5F /* Puyo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8086ED2F170CAF390063AA5F /* Build configuration list for PBXNativeTarget "Puyo" */;
+			buildPhases = (
+				8086ED22170CAF390063AA5F /* Sources */,
+				8086ED23170CAF390063AA5F /* Frameworks */,
+				8086ED24170CAF390063AA5F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Puyo;
+			productName = Puyo;
+			productReference = 8086ED26170CAF390063AA5F /* Puyo */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8086ED1E170CAF390063AA5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "João Tojo";
+			};
+			buildConfigurationList = 8086ED21170CAF390063AA5F /* Build configuration list for PBXProject "Puyo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8086ED1D170CAF390063AA5F;
+			productRefGroup = 8086ED27170CAF390063AA5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8086ED25170CAF390063AA5F /* Puyo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8086ED22170CAF390063AA5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8086ED2A170CAF390063AA5F /* main.cpp in Sources */,
+				8086ED37170CB0190063AA5F /* Event.cpp in Sources */,
+				8086ED3A170CB0250063AA5F /* EventManager.cpp in Sources */,
+				8086ED3E170CB4080063AA5F /* Board.cpp in Sources */,
+				8086ED41170CB4490063AA5F /* Piece.cpp in Sources */,
+				8086ED44170CB5D50063AA5F /* Puyo.cpp in Sources */,
+				8086ED47170CCDA50063AA5F /* BoardView.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8086ED2D170CAF390063AA5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8086ED2E170CAF390063AA5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8086ED30170CAF390063AA5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8086ED31170CAF390063AA5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8086ED21170CAF390063AA5F /* Build configuration list for PBXProject "Puyo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8086ED2D170CAF390063AA5F /* Debug */,
+				8086ED2E170CAF390063AA5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8086ED2F170CAF390063AA5F /* Build configuration list for PBXNativeTarget "Puyo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8086ED30170CAF390063AA5F /* Debug */,
+				8086ED31170CAF390063AA5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8086ED1E170CAF390063AA5F /* Project object */;
+}

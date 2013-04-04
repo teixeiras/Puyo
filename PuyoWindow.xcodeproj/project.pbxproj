@@ -1,0 +1,262 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80DA4E5C170D858D00FAF31C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 80DA4E5A170D858D00FAF31C /* main.mm */; };
+		80DA4E65170D87EB00FAF31C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E64170D87EB00FAF31C /* Cocoa.framework */; };
+		80DA4E68170D87F700FAF31C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E66170D87F700FAF31C /* CoreFoundation.framework */; };
+		80DA4E69170D87F700FAF31C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E67170D87F700FAF31C /* Foundation.framework */; };
+		80DA4E6C170D88ED00FAF31C /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DA4E6B170D88ED00FAF31C /* SDLMain.m */; };
+		80DA4E6E170D8C9D00FAF31C /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E6D170D8C9D00FAF31C /* SDL.framework */; };
+		80DA4E70170D920A00FAF31C /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80DA4E6F170D920A00FAF31C /* SDL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		80096336170D84560003010F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				80DA4E70170D920A00FAF31C /* SDL.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		80096338170D84560003010F /* PuyoWindow */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PuyoWindow; sourceTree = BUILT_PRODUCTS_DIR; };
+		80DA4E5A170D858D00FAF31C /* main.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = main.mm; path = PuyoWindow/main.mm; sourceTree = "<group>"; };
+		80DA4E5B170D858D00FAF31C /* PuyoWindow.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; name = PuyoWindow.1; path = PuyoWindow/PuyoWindow.1; sourceTree = "<group>"; };
+		80DA4E64170D87EB00FAF31C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		80DA4E66170D87F700FAF31C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		80DA4E67170D87F700FAF31C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		80DA4E6A170D88ED00FAF31C /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLMain.h; path = PuyoWindow/SDLMain.h; sourceTree = "<group>"; };
+		80DA4E6B170D88ED00FAF31C /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = PuyoWindow/SDLMain.m; sourceTree = "<group>"; };
+		80DA4E6D170D8C9D00FAF31C /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = PuyoWindow/PuyoWindow/SDL.framework; sourceTree = "<group>"; };
+		80DA4E6F170D920A00FAF31C /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = PuyoWindow/PuyoWindow/SDL.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80096335170D84560003010F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DA4E68170D87F700FAF31C /* CoreFoundation.framework in Frameworks */,
+				80DA4E69170D87F700FAF31C /* Foundation.framework in Frameworks */,
+				80DA4E65170D87EB00FAF31C /* Cocoa.framework in Frameworks */,
+				80DA4E6E170D8C9D00FAF31C /* SDL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8009632F170D84560003010F = {
+			isa = PBXGroup;
+			children = (
+				80DA4E6F170D920A00FAF31C /* SDL.framework */,
+				80DA4E6D170D8C9D00FAF31C /* SDL.framework */,
+				80DA4E66170D87F700FAF31C /* CoreFoundation.framework */,
+				80DA4E67170D87F700FAF31C /* Foundation.framework */,
+				80DA4E64170D87EB00FAF31C /* Cocoa.framework */,
+				8009633A170D84560003010F /* PuyoWindow */,
+				80096339170D84560003010F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80096339170D84560003010F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80096338170D84560003010F /* PuyoWindow */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8009633A170D84560003010F /* PuyoWindow */ = {
+			isa = PBXGroup;
+			children = (
+				80DA4E6A170D88ED00FAF31C /* SDLMain.h */,
+				80DA4E6B170D88ED00FAF31C /* SDLMain.m */,
+				80DA4E5A170D858D00FAF31C /* main.mm */,
+				80DA4E5B170D858D00FAF31C /* PuyoWindow.1 */,
+			);
+			path = PuyoWindow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80096337170D84560003010F /* PuyoWindow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80096341170D84560003010F /* Build configuration list for PBXNativeTarget "PuyoWindow" */;
+			buildPhases = (
+				80096334170D84560003010F /* Sources */,
+				80096335170D84560003010F /* Frameworks */,
+				80096336170D84560003010F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuyoWindow;
+			productName = PuyoWindow;
+			productReference = 80096338170D84560003010F /* PuyoWindow */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80096330170D84560003010F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "João Tojo";
+			};
+			buildConfigurationList = 80096333170D84560003010F /* Build configuration list for PBXProject "PuyoWindow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8009632F170D84560003010F;
+			productRefGroup = 80096339170D84560003010F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80096337170D84560003010F /* PuyoWindow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80096334170D84560003010F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80DA4E5C170D858D00FAF31C /* main.mm in Sources */,
+				80DA4E6C170D88ED00FAF31C /* SDLMain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8009633F170D84560003010F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		80096340170D84560003010F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		80096342170D84560003010F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/SDL,
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/PuyoWindow/PuyoWindow\"",
+				);
+				HEADER_SEARCH_PATHS = "../Puyo/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		80096343170D84560003010F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/SDL,
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/PuyoWindow/PuyoWindow\"",
+				);
+				HEADER_SEARCH_PATHS = "../Puyo/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80096333170D84560003010F /* Build configuration list for PBXProject "PuyoWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8009633F170D84560003010F /* Debug */,
+				80096340170D84560003010F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80096341170D84560003010F /* Build configuration list for PBXNativeTarget "PuyoWindow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80096342170D84560003010F /* Debug */,
+				80096343170D84560003010F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80096330170D84560003010F /* Project object */;
+}
