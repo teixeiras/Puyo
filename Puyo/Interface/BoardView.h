@@ -11,12 +11,19 @@
 
 #include <iostream>
 #include "Board.h"
+#include "GameInterface.h"
+
+#include "SDL/SDL.h"
+#include <string>
 
 
 class BoardView
 {
+    Board * board;
+    GameInterface * gameInterface;
 public:
-    BoardView();
-    void drawAll(Board * board);
+    BoardView(Board * board, GameInterface * gameInterface);
+    void init();
+    void drawAll();
 };
 #endif /* defined(__Puyo__BoardView__) */

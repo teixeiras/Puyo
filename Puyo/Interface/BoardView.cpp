@@ -7,11 +7,19 @@
 //
 
 #include "BoardView.h"
-BoardView::BoardView()
+BoardView::BoardView(Board * board, GameInterface * gameInterface)
+{
+    this->board = board;
+    this->gameInterface = gameInterface;
+}
+
+void BoardView::init()
 {
     
 }
-void BoardView::drawAll(Board * board)
+
+
+void BoardView::drawAll()
 {
     Piece * pieces = board->getPieces();
     for (int i=0; i< BOARD_WIDTH; i ++) {

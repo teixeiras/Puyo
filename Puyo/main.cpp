@@ -12,6 +12,7 @@
 
 int main(int argc, const char * argv[])
 {
+    /*
     Board * board = new Board();
     BoardView * view = new BoardView();
     bool create = true;
@@ -40,6 +41,7 @@ int main(int argc, const char * argv[])
         view->drawAll(board);
 
         
-    }
+    }*/
+    return 1;
 }
 
