@@ -9,14 +9,12 @@
 #include <iostream>
 #include <SDL/SDL.h>
 #include "SDLMain.h"
-#include "Board.h"
 #include "StartScene.h"
 #include "GameInterface.h"
 
 int main(int argc,  char * argv[])
 {
 
-    Board * board = new Board();
     GameInterface * gameInterface = new GameInterface();
     if (!gameInterface->init()) {
         std::cout<<"SDL init failed"<<std::endl;
@@ -24,5 +22,6 @@ int main(int argc,  char * argv[])
     }
     StartScene * startScene = new StartScene(gameInterface);
     gameInterface->end();
+    return 1;
 }
 

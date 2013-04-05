@@ -19,9 +19,11 @@
 
 class Board
 {
-    Piece pieces[BOARD_WIDTH][BOARD_HEIGHT];
-    Puyo  *activePuyo[2];
-    bool  colided[2];
+    Piece   pieces[BOARD_WIDTH][BOARD_HEIGHT];
+    Puyo    *activePuyo[2];
+    bool    colided[2];
+    int     nextMoveDirection;
+    
 public:
     void initGame();
     void generateNewPuyo();
@@ -34,6 +36,12 @@ public:
     void setDown();
     
     bool hasCollided();
+    
+    void moveLeft();
+    void moveRight();
+    void moveOnDirection(int direction);
+    void rotateLeft();
+    void rotateRight();
 
 };
 #endif /* defined(__Puyo__Board__) */

@@ -15,15 +15,26 @@
 
 #include "SDL/SDL.h"
 #include <string>
-
+#include <SDL/SDL_thread.h>
 
 class BoardView
 {
     Board * board;
     GameInterface * gameInterface;
+    SDL_Thread * gameThread;
+    bool isGameRunning;
 public:
     BoardView(Board * board, GameInterface * gameInterface);
     void init();
     void drawAll();
+    int tick();
+    bool gameRunning();
+    void keyboardHandler();
+    
+    void rotateLeft();
+    void rotateRight();
+
+    void goLeft();
+    void goRight();
 };
 #endif /* defined(__Puyo__BoardView__) */

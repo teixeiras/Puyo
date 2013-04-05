@@ -96,6 +96,6 @@ void StartScene::goUp()
 void StartScene::select()
 {
     Board * board = new Board();
-     BoardView * boardView = new BoardView(board, this->gameInterface);
+    BoardView * boardView = new BoardView(board, this->gameInterface);
     
 }
