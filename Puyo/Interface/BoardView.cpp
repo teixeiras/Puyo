@@ -123,19 +123,33 @@ void BoardView::keyboardHandler()
                 switch( event.key.keysym.sym )
                 {
                     case SDLK_z:
-                        this->rotateLeft();
+                        if (!board->endOfGame()) {
+                            this->rotateLeft();
+                        }
                         break;
                     case SDLK_x:
-                        this->rotateRight();
+                        if (!board->endOfGame()) {
+                           this->rotateRight();
+                        }
                         break;
                     case SDLK_DOWN:
-                        this->goDown();
+                        if (!board->endOfGame()) {
+                            this->goDown();
+                        }
                         break;
                     case SDLK_LEFT:
-                        this->goLeft();
+                        if (!board->endOfGame()) {
+                            this->goLeft();
+                        }
                         break;
                     case SDLK_RIGHT:
-                        this->goRight();
+                        if (!board->endOfGame()) {
+                            this->goRight();
+                        }
+                    case SDLK_RETURN:
+                        if (board->endOfGame()) {
+                            quit = true;
+                        }
                         break;
                     case SDLK_ESCAPE:
                         quit = true;
@@ -150,8 +164,10 @@ void BoardView::keyboardHandler()
                 //Quit the program
                 quit = true;
             }
-            SDL_Delay(100);
-
+        }
+        if (quit) {
+            this->stopDrawAll();
+            this->stopTick();
         }
     }
 }

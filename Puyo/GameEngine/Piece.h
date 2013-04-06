@@ -14,7 +14,7 @@
 class Piece
 {
     Puyo * puyo;
-    
+    int position[2];
 public:
     
     Piece();
@@ -22,7 +22,8 @@ public:
     Puyo * getPuyo();
     void removePuyo();
     bool hasPiece();
-    
-    
+    int * getPosition();
+    void setPosition(int * position);
+
 };
 #endif /* defined(__Puyo__Piece__) */

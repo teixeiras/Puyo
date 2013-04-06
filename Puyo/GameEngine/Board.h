@@ -37,7 +37,9 @@ public:
     
     bool hasCollided();
     
-    void detectCombinations();
+    void detectNearPieces(Piece * piece, std::vector<Piece *> * memory);
+    void detectCombinations(Piece * piece);
+    
     void moveLeft();
     void moveRight();
     void moreStep();
@@ -45,6 +47,8 @@ public:
     void rotateLeft();
     void rotateRight();
 
+    
+    
     bool endOfGame() {
         return gameover;
     }

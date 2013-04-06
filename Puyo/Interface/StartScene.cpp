@@ -16,15 +16,19 @@ StartScene::StartScene(GameInterface * gameInterface)
     startGame = new Button(this->gameInterface, "startGameNormal.bmp","startGameSelected.bmp", position);
     
     
-    this->drawScene();
-   
-    this->keyboardHandler();
+    bool quit= false;
+    while(!quit) {
+        this->drawScene();
+        quit = this->keyboardHandler();
+    }
     
 };
 
 void StartScene::drawScene()
 {
- 
+    SDL_Rect rect = {0,0,SCREEN_WIDTH, SCREEN_HEIGHT};
+
+    SDL_FillRect(this->gameInterface->getScreen(), &rect, SDL_MapRGB(this->gameInterface->getScreen()->format, 0, 0, 0));
     SDL_Surface * background = this->gameInterface->load_image("main.bmp");
     this->gameInterface->apply_surface( 0, 100, background, this->gameInterface->getScreen() );
     this->gameInterface->apply_surface( SCREEN_WIDTH, 0, background, this->gameInterface->getScreen() );
@@ -42,7 +46,7 @@ void StartScene::drawScene()
 }
 
 
-void StartScene::keyboardHandler()
+bool StartScene::keyboardHandler()
 {
     bool quit = false;
     bool game = false;
@@ -87,7 +91,12 @@ void StartScene::keyboardHandler()
     }
     if (game == true) {
         this->select();
+    } else {
+        return true;
     }
+    
+    game = false;
+    return false;
 }
 
 void StartScene::goDown()

@@ -19,7 +19,7 @@ class StartScene
 public:
     StartScene(GameInterface * gameInterface);
     void drawScene();
-    void keyboardHandler();
+    bool keyboardHandler();
     void goUp();
     void goDown();
     void select();

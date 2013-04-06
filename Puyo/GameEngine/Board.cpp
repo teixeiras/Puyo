@@ -12,6 +12,12 @@
 void Board::initGame()
 {
     this->generateNewPuyo();
+    for (int i =0 ; i < BOARD_WIDTH; i++) {
+        for (int j =0 ; j < BOARD_HEIGHT; j++) {
+            int position[2] = {i,j};
+            pieces[i][j].setPosition(position);
+        }
+    }
 }
 
 void Board::generateNewPuyo()
@@ -76,6 +82,8 @@ bool Board::iterate(int direction)
                 do {
                         this->iterate(0);
                 }while(colided[!i] == false);
+                this->detectCombinations(&this->pieces[position[0] + direction][position[1] - 1]);
+
                 return false;
             }
             if (position[1] >= BOARD_HEIGHT -1){
@@ -92,9 +100,80 @@ bool Board::iterate(int direction)
     return true;
 }
 
-void Board::detectCombinations()
+
+void Board::detectNearPieces(Piece * piece, std::vector<Piece *> * memory)
 {
+    if (std::find(memory->begin(), memory->end(), piece)!=memory->end()) {
+        return;
+    }
+    memory->push_back(piece);
     
+    //down Piece
+    if (piece->getPosition()[1] - 1 >= 0) {
+        Piece * tmpPiece = &pieces[piece->getPosition()[0]][piece->getPosition()[1] - 1];
+        if (tmpPiece->getPuyo()) {
+            if (tmpPiece->getPuyo()->getPuyoType() == piece->getPuyo()->getPuyoType()) {
+                this->detectNearPieces(tmpPiece, memory);
+                
+            }
+        }
+    }
+    //left Piece
+    if (piece->getPosition()[0] - 1 >= 0) {
+        Piece * tmpPiece = &pieces[piece->getPosition()[0] - 1][piece->getPosition()[1]];
+        if (tmpPiece->getPuyo()) {
+            if (tmpPiece->getPuyo()->getPuyoType() == piece->getPuyo()->getPuyoType()) {
+                this->detectNearPieces(tmpPiece, memory);
+            }
+        }
+    }
+    
+    //up Piece
+    if (piece->getPosition()[1] + 1 < BOARD_HEIGHT) {
+        Piece * tmpPiece = &pieces[piece->getPosition()[0]][piece->getPosition()[1] + 1];
+        if (tmpPiece->getPuyo()) {
+            if (tmpPiece->getPuyo()->getPuyoType() == piece->getPuyo()->getPuyoType()) {
+                this->detectNearPieces(tmpPiece, memory);
+            }
+        }
+    }
+    //right Piece
+    if (piece->getPosition()[0] + 1 < BOARD_WIDTH) {
+        Piece * tmpPiece = &pieces[piece->getPosition()[0] + 1][piece->getPosition()[1]];
+        if (tmpPiece->getPuyo()) {
+            if (tmpPiece->getPuyo()->getPuyoType() == piece->getPuyo()->getPuyoType()) {
+                this->detectNearPieces(tmpPiece, memory);
+            }
+        }
+    }
+}
+
+void Board::detectCombinations(Piece * piece)
+{
+    std::vector<Piece *> * memory = new std::vector<Piece *>();
+    std::vector<Puyo *> * puyos = new std::vector<Puyo *>();
+    this->detectNearPieces(piece, memory);
+    if (memory->size() >= 3) {
+        std::vector<Piece *>::iterator pieceIterator = memory->begin();
+        for (;pieceIterator != memory->end(); pieceIterator ++ ) {
+            Piece * piece = *pieceIterator;
+            piece->removePuyo();
+            
+            if (!(std::find(puyos->begin(), puyos->end(), piece->getPuyo())!=puyos->end())) {
+                puyos->push_back(piece->getPuyo());
+            }
+        }
+        
+        std::vector<Puyo *>::iterator puyoIterator = puyos->begin();
+        for (;puyoIterator != puyos->end(); puyoIterator ++ ) {
+            Puyo * puyo = * puyoIterator;
+            
+            if (pieces[puyo->getPosition()[0]][puyo->getPosition()[1]].hasPiece()) {
+                this->detectCombinations(&pieces[puyo->getPosition()[0]][puyo->getPosition()[1]]);
+            }
+        }
+
+    }
 }
 
 void Board::moveOnDirection(int direction)
@@ -102,22 +181,27 @@ void Board::moveOnDirection(int direction)
     bool isValid = true;
     for (int i =0; i < 2; i++) {
         int *position = activePuyo[i]->getPosition();
-        if (position[0] + direction >= 0 && !this->pieces[position[0] + direction][position[1]].hasPiece()) {
-            isValid = true;
-        } else {
+        if (!(position[0] + direction >= 0 &&
+              !(this->pieces[position[0] + direction][position[1]].hasPiece()
+                && (this->pieces[position[0] + direction][position[1]].getPuyo()!=activePuyo[!i]))
+              )){
+    
             isValid = false;
         }
     }
     if (isValid) {
-        int *position = activePuyo[0]->getPosition();
-        this->pieces[position[0]][position[1]].removePuyo();
-        position[0] += direction;
-        this->pieces[position[0]][position[1]].addPuyo(activePuyo[0]);
         
-        position = activePuyo[1]->getPosition();
-        this->pieces[position[0]][position[1]].removePuyo();
-        position[0] += direction;
-        this->pieces[position[0]][position[1]].addPuyo(activePuyo[1]);
+        int *position1 = activePuyo[0]->getPosition();
+        int *position2 = activePuyo[1]->getPosition();
+        
+        this->pieces[position1[0]][position1[1]].removePuyo();
+        this->pieces[position2[0]][position2[1]].removePuyo();
+
+        position1[0] += direction;
+        this->pieces[position1[0]][position1[1]].addPuyo(activePuyo[0]);
+        
+        position2[0] += direction;
+        this->pieces[position2[0]][position2[1]].addPuyo(activePuyo[1]);
     }
 }
 void Board::moveLeft()

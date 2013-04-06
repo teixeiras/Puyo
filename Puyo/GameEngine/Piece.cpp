@@ -24,9 +24,19 @@ Puyo * Piece::getPuyo()
 
 void Piece::removePuyo()
 {
-    this->puyo = NULL;
+    puyo = 0;
 }
 bool Piece::hasPiece()
 {
     return !(this->puyo == NULL);
+}
+
+int * Piece::getPosition()
+{
+    return this->position;
+}
+void Piece::setPosition(int * position)
+{
+    this->position[0] = position[0];
+    this->position[1] = position[1];
 }
