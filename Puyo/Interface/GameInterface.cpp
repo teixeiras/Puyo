@@ -7,9 +7,7 @@
 //
 
 #include "GameInterface.h"
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
-const int SCREEN_BPP = 32;
+
 
 bool GameInterface::init() {
     if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )
@@ -21,6 +19,20 @@ bool GameInterface::init() {
     {
         return false;
     }
+    
+    font = TTF_OpenFont( "BANANASP.TTF", 20 );
+
+    if( TTF_Init() == -1 )
+    {
+        return false;
+    }
+    
+    //Initialize SDL_mixer
+    if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 )
+    {
+        return false;
+    }
+
     SDL_WM_SetCaption( "Puyo Puyo", NULL );
     
     
@@ -30,6 +42,9 @@ bool GameInterface::init() {
 void GameInterface::end()
 {
     SDL_Quit();
+
+    TTF_CloseFont( font );
+    TTF_Quit();
 }
 
 SDL_Surface * GameInterface::getScreen()
@@ -52,23 +67,41 @@ void GameInterface::apply_surface( int x, int y, SDL_Surface* source, SDL_Surfac
 
 SDL_Surface *GameInterface::load_image( std::string filename )
 {
-    //Temporary storage for the image that's loaded
     SDL_Surface* loadedImage = NULL;
-    
-    //The optimized image that will be used
+
     SDL_Surface* optimizedImage = NULL;
     
-    //Load the image
     loadedImage = SDL_LoadBMP( filename.c_str() );
     
-    //If nothing went wrong in loading the image
     if( loadedImage != NULL )
     {
-        //Create an optimized image
         optimizedImage = SDL_DisplayFormat( loadedImage );
         
-        //Free the old image
         SDL_FreeSurface( loadedImage );
+    }
+    
+    return optimizedImage;
+}
+SDL_Surface *GameInterface::load_image_with_alpha( std::string filename )
+{
+    SDL_Surface* loadedImage = NULL;
+    
+    SDL_Surface* optimizedImage = NULL;
+    
+    loadedImage = SDL_LoadBMP( filename.c_str() );
+    
+    if( loadedImage != NULL )
+    {
+        optimizedImage = SDL_DisplayFormat( loadedImage );
+        
+        SDL_FreeSurface( loadedImage );
+        
+        if( optimizedImage != NULL )
+        {
+            Uint32 colorkey = SDL_MapRGB( optimizedImage->format, 0xFF, 0xFF, 0xFF );
+            
+            SDL_SetColorKey( optimizedImage, SDL_SRCCOLORKEY, colorkey );
+        }
     }
     
     //Return the optimized image

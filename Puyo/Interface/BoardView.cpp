@@ -8,34 +8,38 @@
 
 #include "BoardView.h"
 
+Uint32 tickHandler(Uint32 interval, void *param)
+{
+    
+    BoardView * boardView = (BoardView *)param;
+    if (!boardView->gameRunning()) {
+        boardView->stopTick();
+        return 200;
+    }
+    boardView->tick();
+    
+    return  200;
+}
 
-Uint32 tick(Uint32 interval, void *param)
+Uint32 drawHandler(Uint32 interval, void *param)
 {
     BoardView * boardView = (BoardView *)param;
-    boardView->tick();
-    if (boardView->gameRunning()) {
-        SDL_AddTimer(10,tick,boardView);
+    if (!boardView->gameRunning()) {
+        boardView->stopDrawAll();
+        return 500;
     }
-    return 1;
+    boardView->drawAll();
+    
+    return 500;
 }
-int main_thread(void * data)
-{
-    BoardView * boardView = (BoardView *)data;
-    SDL_AddTimer(10,tick,boardView);
-    while(boardView->gameRunning()) {
-        SDL_Delay(200);
-    }
-    return 1;
-}
+
 
 BoardView::BoardView(Board * board, GameInterface * gameInterface)
 {
     this->board = board;
     this->board->initGame();
     this->gameInterface = gameInterface;
-    gameThread = SDL_CreateThread(main_thread, this );
-    isGameRunning = true;
-    this->keyboardHandler();
+   
 }
 
 bool BoardView::gameRunning()
@@ -43,40 +47,42 @@ bool BoardView::gameRunning()
     return isGameRunning;
 }
 
+void BoardView::stopTick()
+{
+    SDL_RemoveTimer(this->tickTimer);
+}
+
+void BoardView::stopDrawAll()
+{
+    SDL_RemoveTimer(this->drawTimer);
+}
+
+
 int BoardView::tick()
 {
-    board->iterate(0);
-    this->drawAll();
+    if (!board->iterate(0)){
+        board->generateNewPuyo();
+    }
+    if (board->endOfGame()){
+        this->gameOver();
+        isGameRunning = false;
+    }
     return 1;
 }
 
 
 void BoardView::init()
 {
-    
+    tickTimer = SDL_AddTimer(1000,tickHandler,this);
+    drawTimer = SDL_AddTimer(500,drawHandler,this);
+    while(this->gameRunning()) {
+        SDL_Delay(200);
+    }
+    isGameRunning = true;
+    this->keyboardHandler();
 }
 
 
-void BoardView::drawAll()
-{
-    Piece * pieces = board->getPieces();
-    for (int i=0; i< BOARD_WIDTH; i ++) {
-            std::cout<<"#";
-    }
-    std::cout<<std::endl;
-    for (int j = BOARD_HEIGHT ; j > 0; j--) {
-        for (int i=0; i < BOARD_WIDTH;  i++) {
-            Piece piece = *(pieces + j- 1 + i* BOARD_HEIGHT);
-            std::cout<<(piece.hasPiece()?"*":" ");
-        }
-        std::cout<<std::endl;
-    }
-    for (int i=0; i< BOARD_WIDTH; i ++) {
-        std::cout<<"#";
-    }
-    std::cout<<std::endl;
-    
-}
 
 void BoardView::keyboardHandler()
 {
@@ -105,6 +111,7 @@ void BoardView::keyboardHandler()
                         break;
                     case SDLK_RIGHT:
                         this->goRight();
+                        break;
                     case SDLK_ESCAPE:
                         quit = true;
                     default:
@@ -118,6 +125,8 @@ void BoardView::keyboardHandler()
                 //Quit the program
                 quit = true;
             }
+            SDL_Delay(100);
+
         }
     }
 }
@@ -125,19 +134,85 @@ void BoardView::keyboardHandler()
 void BoardView::rotateLeft()
 {
     this->board->rotateLeft();
+    this->drawAll();
 }
 
 void BoardView::rotateRight()
 {
     this->board->rotateRight();
+    this->drawAll();
 }
 
 void BoardView::goLeft()
 {
-    this->board->moveLeft();}
+    this->board->moveLeft();
+    this->drawAll();
+}
 
 void BoardView::goRight()
 {
     this->board->moveRight();
+    this->drawAll();
+
 }
 
+
+void BoardView::drawAll()
+{
+    
+    Piece * pieces = board->getPieces();
+    
+    SDL_Rect rect = {0,0,SCREEN_WIDTH,SCREEN_HEIGHT};
+    SDL_FillRect(this->gameInterface->getScreen(), &rect, SDL_MapRGB(this->gameInterface->getScreen()->format, 20, 20, 200));
+    
+    Uint16 width = PUYO_SIZE * BOARD_WIDTH;
+    Uint16 height = PUYO_SIZE * BOARD_HEIGHT;
+    
+    Sint16 position[2];
+    position[0] = (SCREEN_WIDTH - width) / 2;
+    position[1] = (SCREEN_HEIGHT - height) / 2;
+    rect = {position[0],position[1],width,height};
+    
+    SDL_FillRect(this->gameInterface->getScreen(), &rect, SDL_MapRGB(this->gameInterface->getScreen()->format, 200, 200, 200));
+    
+    SDL_Surface * puyo = this->gameInterface->load_image_with_alpha("puyo_green.bmp");
+    
+    for (int j = BOARD_HEIGHT ; j > 0; j--) {
+        for (int i=0; i < BOARD_WIDTH;  i++) {
+            Piece piece = *(pieces + j- 1 + i* BOARD_HEIGHT);
+            if (piece.hasPiece()) {
+                
+                Sint16 poyoPosition[2];
+                poyoPosition[0] = position[0] + width - PUYO_SIZE * i;
+                poyoPosition[1] = position[1] + height - PUYO_SIZE * j;
+                
+                this->gameInterface->apply_surface( poyoPosition[0], poyoPosition[1], puyo, this->gameInterface->getScreen() );
+            }
+        }
+    }
+    
+    if( SDL_Flip( this->gameInterface->getScreen() ) == -1 )
+    {
+        return ;
+    }
+}
+
+
+void BoardView::gameOver()
+{
+    Uint16 width = SCREEN_WIDTH /3 * 2;
+    Uint16 height = SCREEN_HEIGHT /3 * 2;
+    
+    Sint16 position [2];
+    position[0] =(SCREEN_WIDTH  - width) / 2;
+    position[1] =(SCREEN_HEIGHT  - height) / 2;
+    
+    SDL_Rect rect = {position[0],position[1] , width, height };
+    SDL_FillRect(this->gameInterface->getScreen(), &rect, SDL_MapRGB(this->gameInterface->getScreen()->format, 0xF0, 0x0, 0xF0));
+
+    
+    if( SDL_Flip( this->gameInterface->getScreen() ) == -1 )
+    {
+        return ;
+    }
+}

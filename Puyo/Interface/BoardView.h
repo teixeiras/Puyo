@@ -23,12 +23,15 @@ class BoardView
     GameInterface * gameInterface;
     SDL_Thread * gameThread;
     bool isGameRunning;
+    SDL_TimerID tickTimer, drawTimer;
 public:
     BoardView(Board * board, GameInterface * gameInterface);
     void init();
-    void drawAll();
+    
     int tick();
     bool gameRunning();
+    void stopTick();
+    void stopDrawAll();
     void keyboardHandler();
     
     void rotateLeft();
@@ -36,5 +39,9 @@ public:
 
     void goLeft();
     void goRight();
+    
+    void drawAll();
+    void gameOver();
+    
 };
 #endif /* defined(__Puyo__BoardView__) */

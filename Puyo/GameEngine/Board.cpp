@@ -16,6 +16,7 @@ void Board::initGame()
 
 void Board::generateNewPuyo()
 {
+    colided[0] = colided[1] = false;
     int position =  BOARD_WIDTH / 2;
     for (int i =0; i < 2; i++) {
         activePuyo[i] = new Puyo;
@@ -44,8 +45,22 @@ void Board::setDown()
 
 bool Board::iterate(int direction)
 {
-    for (int i =0; i < 2; i++) {
-        
+    
+    int * position1 = activePuyo[0]->getPosition();
+    int * position2 = activePuyo[1]->getPosition();
+    int first = 0;
+    if (position1[1] < position2[1]) {
+        first = 1;
+    } else {
+        first = 0;
+    }
+    
+    
+    for (int j =0; j < 2; j++) {
+        int i = j;
+        if (first == 0) {
+            i = !j;
+        }
         int *position = activePuyo[i]->getPosition();
         if (position[1] - 1< 0) {
             colided[i] = true;
@@ -56,8 +71,12 @@ bool Board::iterate(int direction)
             if (!colided[i]) {
                 colided[i] = true;
                 do {
-                    this->iterate(0);
+                        this->iterate(0);
                 }while(colided[!i] == false);
+                return false;
+            }
+            if (position[1] >= BOARD_HEIGHT -1){
+                gameover = true;
             }
             continue;
         }
@@ -66,6 +85,7 @@ bool Board::iterate(int direction)
         position[1] --;
         position[0] -= direction;
         this->pieces[position[0]][position[1]].addPuyo(activePuyo[i]);
+        std::cout<<i<<":"<<position[0]<<position[1]<<std::endl;
     }
     return true;
 }
@@ -82,9 +102,13 @@ void Board::moveOnDirection(int direction)
         }
     }
     if (isValid) {
+        
         int *position = activePuyo[0]->getPosition();
+        this->pieces[position[0]][position[1]].removePuyo();
         position[0] += direction;
+        
         position = activePuyo[1]->getPosition();
+        this->pieces[position[0]][position[1]].removePuyo();
         position[0] += direction;
     }
 }
@@ -95,7 +119,7 @@ void Board::moveLeft()
 
 void Board::moveRight()
 {
-    this->moveOnDirection(0);
+    this->moveOnDirection(-1);
 }
 
 void Board::rotateLeft()

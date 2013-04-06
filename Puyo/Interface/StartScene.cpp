@@ -7,7 +7,7 @@
 //
 
 #include "StartScene.h"
-
+#include "SoundManager.h"
 #include "BoardView.h"
 StartScene::StartScene(GameInterface * gameInterface)
 {
@@ -38,13 +38,14 @@ void StartScene::drawScene()
         return ;
     }
     SDL_FreeSurface(background);
-
+    SoundManager::getSoundManager()->playMusic("beggining_music.wav");
 }
 
 
 void StartScene::keyboardHandler()
 {
     bool quit = false;
+    bool game = false;
     SDL_Event event;
 
     while( quit == false )
@@ -65,7 +66,8 @@ void StartScene::keyboardHandler()
                         this->goUp();
                         break;
                     case SDLK_RETURN:
-                        this->select();
+                        game = true;
+                        quit = true;
                         break;
                     case SDLK_ESCAPE:
                         quit = true;
@@ -80,7 +82,11 @@ void StartScene::keyboardHandler()
                 //Quit the program
                 quit = true;
             }
+            SDL_Delay(100);
         }
+    }
+    if (game == true) {
+        this->select();
     }
 }
 
@@ -97,5 +103,6 @@ void StartScene::select()
 {
     Board * board = new Board();
     BoardView * boardView = new BoardView(board, this->gameInterface);
+    boardView->init();
     
 }

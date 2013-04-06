@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80BC2F96170E2FBD00FBDEC5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2F95170E2FBD00FBDEC5 /* OpenGL.framework */; };
 		80BC2FAE170E30AE00FBDEC5 /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F97170E307200FBDEC5 /* Event.cpp */; };
 		80BC2FAF170E30AE00FBDEC5 /* Event.h in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F98170E307200FBDEC5 /* Event.h */; };
 		80BC2FB0170E30AE00FBDEC5 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F99170E307200FBDEC5 /* EventManager.cpp */; };
@@ -28,11 +27,27 @@
 		80BC2FC8170E3DFB00FBDEC5 /* startGameNormal.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FC6170E3DBA00FBDEC5 /* startGameNormal.bmp */; };
 		80BC2FC9170E3DFB00FBDEC5 /* startGameSelected.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FC7170E3DBA00FBDEC5 /* startGameSelected.bmp */; };
 		80BC2FCC170E3E5E00FBDEC5 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2FCA170E3E5E00FBDEC5 /* Button.cpp */; };
+		80BC2FCE170F4B9800FBDEC5 /* puyo_green.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FCD170F4B8D00FBDEC5 /* puyo_green.bmp */; };
+		80BC2FD1170F82F400FBDEC5 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2FCF170F82F300FBDEC5 /* SoundManager.cpp */; };
+		80BC2FDD170F856F00FBDEC5 /* BANANASP.TTF in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD2170F856000FBDEC5 /* BANANASP.TTF */; };
+		80BC2FDE170F856F00FBDEC5 /* puyo_blue.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD3170F856000FBDEC5 /* puyo_blue.bmp */; };
+		80BC2FDF170F856F00FBDEC5 /* puyo_purple copy.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD4170F856000FBDEC5 /* puyo_purple copy.bmp */; };
+		80BC2FE0170F856F00FBDEC5 /* puyo_red.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD5170F856000FBDEC5 /* puyo_red.bmp */; };
+		80BC2FE1170F856F00FBDEC5 /* puyo_yellow.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD6170F856000FBDEC5 /* puyo_yellow.bmp */; };
+		80BC2FE2170F857B00FBDEC5 /* beggining_music.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD8170F856100FBDEC5 /* beggining_music.wav */; };
+		80BC2FE3170F857B00FBDEC5 /* colide_sound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD9170F856100FBDEC5 /* colide_sound.wav */; };
+		80BC2FE4170F857B00FBDEC5 /* ending_music.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FDA170F856100FBDEC5 /* ending_music.wav */; };
+		80BC2FE5170F857B00FBDEC5 /* pop_sound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FDB170F856100FBDEC5 /* pop_sound.wav */; };
+		80BC2FE6170F857B00FBDEC5 /* turn_sound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FDC170F856100FBDEC5 /* turn_sound.wav */; };
+		80BC2FF2170F8E0600FBDEC5 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FF1170F8E0600FBDEC5 /* SDL_mixer.framework */; };
+		80BC2FF4170F8E1F00FBDEC5 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FF3170F8E1F00FBDEC5 /* SDL.framework */; };
+		80BC2FF6170F8E3A00FBDEC5 /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FF5170F8E3900FBDEC5 /* SDL_ttf.framework */; };
+		80BC2FFA170F8E6100FBDEC5 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2FF7170F8E6100FBDEC5 /* SDL_mixer.framework */; };
+		80BC2FFB170F8E6100FBDEC5 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2FF8170F8E6100FBDEC5 /* SDL_ttf.framework */; };
+		80BC2FFC170F8E6100FBDEC5 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2FF9170F8E6100FBDEC5 /* SDL.framework */; };
 		80DA4E65170D87EB00FAF31C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E64170D87EB00FAF31C /* Cocoa.framework */; };
 		80DA4E68170D87F700FAF31C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E66170D87F700FAF31C /* CoreFoundation.framework */; };
 		80DA4E69170D87F700FAF31C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E67170D87F700FAF31C /* Foundation.framework */; };
-		80DA4E6E170D8C9D00FAF31C /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E6D170D8C9D00FAF31C /* SDL.framework */; };
-		80DA4E70170D920A00FAF31C /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80DA4E6F170D920A00FAF31C /* SDL.framework */; };
 		80DA4E96170E2B1C00FAF31C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 80DA4E92170E2B1C00FAF31C /* main.mm */; };
 		80DA4E97170E2B1C00FAF31C /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 80DA4E95170E2B1C00FAF31C /* SDLMain.m */; };
 /* End PBXBuildFile section */
@@ -42,12 +57,25 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 10;
 			files = (
+				80BC2FF6170F8E3A00FBDEC5 /* SDL_ttf.framework in CopyFiles */,
+				80BC2FF4170F8E1F00FBDEC5 /* SDL.framework in CopyFiles */,
+				80BC2FF2170F8E0600FBDEC5 /* SDL_mixer.framework in CopyFiles */,
+				80BC2FE2170F857B00FBDEC5 /* beggining_music.wav in CopyFiles */,
+				80BC2FE3170F857B00FBDEC5 /* colide_sound.wav in CopyFiles */,
+				80BC2FE4170F857B00FBDEC5 /* ending_music.wav in CopyFiles */,
+				80BC2FE5170F857B00FBDEC5 /* pop_sound.wav in CopyFiles */,
+				80BC2FE6170F857B00FBDEC5 /* turn_sound.wav in CopyFiles */,
+				80BC2FDD170F856F00FBDEC5 /* BANANASP.TTF in CopyFiles */,
+				80BC2FDE170F856F00FBDEC5 /* puyo_blue.bmp in CopyFiles */,
+				80BC2FDF170F856F00FBDEC5 /* puyo_purple copy.bmp in CopyFiles */,
+				80BC2FE0170F856F00FBDEC5 /* puyo_red.bmp in CopyFiles */,
+				80BC2FE1170F856F00FBDEC5 /* puyo_yellow.bmp in CopyFiles */,
+				80BC2FCE170F4B9800FBDEC5 /* puyo_green.bmp in CopyFiles */,
 				80BC2FC8170E3DFB00FBDEC5 /* startGameNormal.bmp in CopyFiles */,
 				80BC2FC9170E3DFB00FBDEC5 /* startGameSelected.bmp in CopyFiles */,
 				80BC2FC2170E334C00FBDEC5 /* main.bmp in CopyFiles */,
-				80DA4E70170D920A00FAF31C /* SDL.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		80096338170D84560003010F /* PuyoWindow */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PuyoWindow; sourceTree = BUILT_PRODUCTS_DIR; };
-		80BC2F95170E2FBD00FBDEC5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		80BC2F97170E307200FBDEC5 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
 		80BC2F98170E307200FBDEC5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		80BC2F99170E307200FBDEC5 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
@@ -74,18 +101,34 @@
 		80BC2FA9170E307200FBDEC5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		80BC2FAA170E307200FBDEC5 /* Puyo.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = Puyo.1; sourceTree = "<group>"; };
 		80BC2FC0170E334300FBDEC5 /* main.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = main.bmp; sourceTree = "<group>"; };
-		80BC2FC1170E334300FBDEC5 /* main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpg; sourceTree = "<group>"; };
 		80BC2FC3170E356800FBDEC5 /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
 		80BC2FC4170E356800FBDEC5 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		80BC2FC6170E3DBA00FBDEC5 /* startGameNormal.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = startGameNormal.bmp; sourceTree = "<group>"; };
 		80BC2FC7170E3DBA00FBDEC5 /* startGameSelected.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = startGameSelected.bmp; sourceTree = "<group>"; };
 		80BC2FCA170E3E5E00FBDEC5 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
 		80BC2FCB170E3E5E00FBDEC5 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		80BC2FCD170F4B8D00FBDEC5 /* puyo_green.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_green.bmp; sourceTree = "<group>"; };
+		80BC2FCF170F82F300FBDEC5 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundManager.cpp; sourceTree = "<group>"; };
+		80BC2FD0170F82F300FBDEC5 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		80BC2FD2170F856000FBDEC5 /* BANANASP.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BANANASP.TTF; sourceTree = "<group>"; };
+		80BC2FD3170F856000FBDEC5 /* puyo_blue.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_blue.bmp; sourceTree = "<group>"; };
+		80BC2FD4170F856000FBDEC5 /* puyo_purple copy.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "puyo_purple copy.bmp"; sourceTree = "<group>"; };
+		80BC2FD5170F856000FBDEC5 /* puyo_red.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_red.bmp; sourceTree = "<group>"; };
+		80BC2FD6170F856000FBDEC5 /* puyo_yellow.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_yellow.bmp; sourceTree = "<group>"; };
+		80BC2FD8170F856100FBDEC5 /* beggining_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beggining_music.wav; sourceTree = "<group>"; };
+		80BC2FD9170F856100FBDEC5 /* colide_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = colide_sound.wav; sourceTree = "<group>"; };
+		80BC2FDA170F856100FBDEC5 /* ending_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ending_music.wav; sourceTree = "<group>"; };
+		80BC2FDB170F856100FBDEC5 /* pop_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop_sound.wav; sourceTree = "<group>"; };
+		80BC2FDC170F856100FBDEC5 /* turn_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = turn_sound.wav; sourceTree = "<group>"; };
+		80BC2FF1170F8E0600FBDEC5 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
+		80BC2FF3170F8E1F00FBDEC5 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
+		80BC2FF5170F8E3900FBDEC5 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_ttf.framework; sourceTree = "<group>"; };
+		80BC2FF7170F8E6100FBDEC5 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
+		80BC2FF8170F8E6100FBDEC5 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_ttf.framework; sourceTree = "<group>"; };
+		80BC2FF9170F8E6100FBDEC5 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
 		80DA4E64170D87EB00FAF31C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		80DA4E66170D87F700FAF31C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		80DA4E67170D87F700FAF31C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		80DA4E6D170D8C9D00FAF31C /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = PuyoWindow/PuyoWindow/SDL.framework; sourceTree = "<group>"; };
-		80DA4E6F170D920A00FAF31C /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = PuyoWindow/PuyoWindow/SDL.framework; sourceTree = "<group>"; };
 		80DA4E92170E2B1C00FAF31C /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = PuyoWindow/main.mm; sourceTree = "<group>"; };
 		80DA4E93170E2B1C00FAF31C /* PuyoWindow.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; name = PuyoWindow.1; path = PuyoWindow/PuyoWindow.1; sourceTree = "<group>"; };
 		80DA4E94170E2B1C00FAF31C /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLMain.h; path = PuyoWindow/SDLMain.h; sourceTree = "<group>"; };
@@ -97,11 +140,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80BC2F96170E2FBD00FBDEC5 /* OpenGL.framework in Frameworks */,
 				80DA4E68170D87F700FAF31C /* CoreFoundation.framework in Frameworks */,
 				80DA4E69170D87F700FAF31C /* Foundation.framework in Frameworks */,
 				80DA4E65170D87EB00FAF31C /* Cocoa.framework in Frameworks */,
-				80DA4E6E170D8C9D00FAF31C /* SDL.framework in Frameworks */,
+				80BC2FFA170F8E6100FBDEC5 /* SDL_mixer.framework in Frameworks */,
+				80BC2FFB170F8E6100FBDEC5 /* SDL_ttf.framework in Frameworks */,
+				80BC2FFC170F8E6100FBDEC5 /* SDL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,9 +155,12 @@
 		8009632F170D84560003010F = {
 			isa = PBXGroup;
 			children = (
-				80BC2F95170E2FBD00FBDEC5 /* OpenGL.framework */,
-				80DA4E6F170D920A00FAF31C /* SDL.framework */,
-				80DA4E6D170D8C9D00FAF31C /* SDL.framework */,
+				80BC2FF7170F8E6100FBDEC5 /* SDL_mixer.framework */,
+				80BC2FF8170F8E6100FBDEC5 /* SDL_ttf.framework */,
+				80BC2FF9170F8E6100FBDEC5 /* SDL.framework */,
+				80BC2FF5170F8E3900FBDEC5 /* SDL_ttf.framework */,
+				80BC2FF3170F8E1F00FBDEC5 /* SDL.framework */,
+				80BC2FF1170F8E0600FBDEC5 /* SDL_mixer.framework */,
 				80DA4E66170D87F700FAF31C /* CoreFoundation.framework */,
 				80DA4E67170D87F700FAF31C /* Foundation.framework */,
 				80DA4E64170D87EB00FAF31C /* Cocoa.framework */,
@@ -178,6 +225,8 @@
 				80BC2FC4170E356800FBDEC5 /* StartScene.h */,
 				80BC2FCA170E3E5E00FBDEC5 /* Button.cpp */,
 				80BC2FCB170E3E5E00FBDEC5 /* Button.h */,
+				80BC2FCF170F82F300FBDEC5 /* SoundManager.cpp */,
+				80BC2FD0170F82F300FBDEC5 /* SoundManager.h */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -198,12 +247,30 @@
 		80BC2FBF170E334300FBDEC5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80BC2FD2170F856000FBDEC5 /* BANANASP.TTF */,
+				80BC2FD3170F856000FBDEC5 /* puyo_blue.bmp */,
+				80BC2FD4170F856000FBDEC5 /* puyo_purple copy.bmp */,
+				80BC2FD5170F856000FBDEC5 /* puyo_red.bmp */,
+				80BC2FD6170F856000FBDEC5 /* puyo_yellow.bmp */,
+				80BC2FD7170F856000FBDEC5 /* sounds */,
+				80BC2FCD170F4B8D00FBDEC5 /* puyo_green.bmp */,
 				80BC2FC6170E3DBA00FBDEC5 /* startGameNormal.bmp */,
 				80BC2FC7170E3DBA00FBDEC5 /* startGameSelected.bmp */,
 				80BC2FC0170E334300FBDEC5 /* main.bmp */,
-				80BC2FC1170E334300FBDEC5 /* main.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		80BC2FD7170F856000FBDEC5 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				80BC2FD8170F856100FBDEC5 /* beggining_music.wav */,
+				80BC2FD9170F856100FBDEC5 /* colide_sound.wav */,
+				80BC2FDA170F856100FBDEC5 /* ending_music.wav */,
+				80BC2FDB170F856100FBDEC5 /* pop_sound.wav */,
+				80BC2FDC170F856100FBDEC5 /* turn_sound.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +343,7 @@
 				80DA4E97170E2B1C00FAF31C /* SDLMain.m in Sources */,
 				80BC2FC5170E356800FBDEC5 /* StartScene.cpp in Sources */,
 				80BC2FCC170E3E5E00FBDEC5 /* Button.cpp in Sources */,
+				80BC2FD1170F82F400FBDEC5 /* SoundManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +412,13 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/SDL,
+					"\"$(SRCROOT)\"/**",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/PuyoWindow/PuyoWindow\"",
 				);
-				HEADER_SEARCH_PATHS = "../Puyo/**";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)\"/**",
+					"\"$(SRCROOT)\"/SDL.framework/Headers",
+				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -360,11 +430,13 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/SDL,
+					"\"$(SRCROOT)\"/**",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/PuyoWindow/PuyoWindow\"",
 				);
-				HEADER_SEARCH_PATHS = "../Puyo/**";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)\"/**",
+					"\"$(SRCROOT)\"/SDL.framework/Headers",
+				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";

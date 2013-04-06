@@ -16,14 +16,13 @@
 
 #include "Piece.h"
 #include "Puyo.h"
-
 class Board
 {
     Piece   pieces[BOARD_WIDTH][BOARD_HEIGHT];
     Puyo    *activePuyo[2];
     bool    colided[2];
     int     nextMoveDirection;
-    
+    bool    gameover;
 public:
     void initGame();
     void generateNewPuyo();
@@ -43,5 +42,8 @@ public:
     void rotateLeft();
     void rotateRight();
 
+    bool endOfGame() {
+        return gameover;
+    }
 };
 #endif /* defined(__Puyo__Board__) */
