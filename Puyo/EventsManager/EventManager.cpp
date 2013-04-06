@@ -7,20 +7,26 @@
 //
 
 #include "EventManager.h"
+
 EventManager::EventManager()
 {
-    observers = new std::vector<EventObserver *>();
+ 
 }
 
-void EventManager::addObserver(EventObserver * observer)
-{
-    observers->push_back(observer);
-}
 
-void EventManager::sendEvent(Event * event)
+void EventManager::sendEvent(int identifier)
 {
-    std::vector<EventObserver *>::iterator observersIt = observers->begin();
-    for (;observersIt != observers->end(); observersIt++) {
-        
+    
+
+}
+Event<class t> *EventManager::getEvent(int identifier)
+{
+    std::vector<Event<class t>>::iterator observersIt = this->events.begin();
+    for (;observersIt != events.end(); observersIt++) {
+        Event<class t> event = * observersIt;
+        if (event.isTypeof(identifier)) {
+            return &(*observersIt);
+        }
     }
+    return NULL;
 }

@@ -18,8 +18,10 @@ void Board::generateNewPuyo()
 {
     colided[0] = colided[1] = false;
     int position =  BOARD_WIDTH / 2;
+    srand ((int)time(NULL));
     for (int i =0; i < 2; i++) {
-        activePuyo[i] = new Puyo;
+
+        activePuyo[i] = new Puyo(static_cast<PUYO_TYPE>(rand() % 5));
         activePuyo[i]->getPosition()[0] = position;
         activePuyo[i]->getPosition()[1] = BOARD_HEIGHT - (i + 1 );
         this->pieces[activePuyo[i]->getPosition()[0]]
@@ -27,7 +29,6 @@ void Board::generateNewPuyo()
     }
     
 }
-
 void Board::shiftLeft()
 {
     this->iterate(1);
@@ -58,12 +59,14 @@ bool Board::iterate(int direction)
     
     for (int j =0; j < 2; j++) {
         int i = j;
-        if (first == 0) {
+        if (!first) {
             i = !j;
         }
         int *position = activePuyo[i]->getPosition();
         if (position[1] - 1< 0) {
             colided[i] = true;
+            if (colided[!i])
+                return false;
             continue;
         }
         
@@ -85,9 +88,13 @@ bool Board::iterate(int direction)
         position[1] --;
         position[0] -= direction;
         this->pieces[position[0]][position[1]].addPuyo(activePuyo[i]);
-        std::cout<<i<<":"<<position[0]<<position[1]<<std::endl;
     }
     return true;
+}
+
+void Board::detectCombinations()
+{
+    
 }
 
 void Board::moveOnDirection(int direction)
@@ -95,41 +102,126 @@ void Board::moveOnDirection(int direction)
     bool isValid = true;
     for (int i =0; i < 2; i++) {
         int *position = activePuyo[i]->getPosition();
-        if (position[0] + direction > 0 && !this->pieces[position[0] + direction][position[1]].hasPiece()) {
+        if (position[0] + direction >= 0 && !this->pieces[position[0] + direction][position[1]].hasPiece()) {
             isValid = true;
         } else {
             isValid = false;
         }
     }
     if (isValid) {
-        
         int *position = activePuyo[0]->getPosition();
         this->pieces[position[0]][position[1]].removePuyo();
         position[0] += direction;
+        this->pieces[position[0]][position[1]].addPuyo(activePuyo[0]);
         
         position = activePuyo[1]->getPosition();
         this->pieces[position[0]][position[1]].removePuyo();
         position[0] += direction;
+        this->pieces[position[0]][position[1]].addPuyo(activePuyo[1]);
     }
 }
 void Board::moveLeft()
 {
-    this->moveOnDirection(1);
+    this->moveOnDirection(-1);
 }
 
 void Board::moveRight()
 {
-    this->moveOnDirection(-1);
+    this->moveOnDirection(1);
 }
 
 void Board::rotateLeft()
 {
+    bool isValid = true;
     
+    int *position = activePuyo[0]->getPosition();
+    int trans[2];
+    if (activePuyo[1]->getPosition()[0] == position[0]) {
+        //in vertical line
+        if (activePuyo[1]->getPosition()[1] - position[1]>0) {
+            //piece for rotation is down go right
+            trans[0] = 1;
+            trans[1] = 1;
+        } else {
+            //piece for rotation is up go left
+            trans[0] = -1;
+            trans[1] = -1;
+        }
+    } else{
+        //in horizontal line
+        if (activePuyo[1]->getPosition()[0] - position[0]>0) {
+            //piece for rotation is on right go up
+            trans[0] = 1;
+            trans[1] = -1;
+        } else {
+            //piece for rotation is on left go down
+            trans[0] = -1;
+            trans[1] = 1;
+        }
+    }
+
+    if (position[0] + trans[0] >= 0 && position[1] + trans[1] >= 0 && !this->pieces[position[0] + trans[0]][position[1] + trans[1]].hasPiece()) {
+        isValid = true;
+    } else {
+        isValid = false;
+    }
+
+    if (isValid) {
+        int *position = activePuyo[0]->getPosition();
+        this->pieces[position[0]][position[1]].removePuyo();
+        position[0] += trans[0];
+        position[1] += trans[1];
+        this->pieces[position[0]][position[1]].addPuyo(activePuyo[0]);
+    }
 }
 
 void Board::rotateRight()
 {
+    bool isValid = true;
     
+    int *position = activePuyo[1]->getPosition();
+    int trans[2];
+    if (activePuyo[0]->getPosition()[0] == position[0]) {
+        //in vertical line
+        if (activePuyo[0]->getPosition()[1] - position[1]>0) {
+            //piece for rotation is down go right
+            trans[0] = 1;
+            trans[1] = 1;
+        } else {
+            //piece for rotation is up go left
+            trans[0] = -1;
+            trans[1] = -1;
+        }
+    } else{
+        //in horizontal line
+        if (activePuyo[0]->getPosition()[0] - position[0]>0) {
+            //piece for rotation is on right go up
+            trans[0] = 1;
+            trans[1] = -1;
+        } else {
+            //piece for rotation is on left go down
+            trans[0] = -1;
+            trans[1] = 1;
+        }
+    }
+    
+    if (position[0] + trans[0] >= 0 && position[1] + trans[1] >= 0 && !this->pieces[position[0] + trans[0]][position[1] + trans[1]].hasPiece()) {
+        isValid = true;
+    } else {
+        isValid = false;
+    }
+    
+    if (isValid) {
+        int *position = activePuyo[1]->getPosition();
+        this->pieces[position[0]][position[1]].removePuyo();
+        position[0] += trans[0];
+        position[1] += trans[1];
+        this->pieces[position[0]][position[1]].addPuyo(activePuyo[1]);
+    }}
+
+void Board::moreStep()
+{
+    this->iterate(0);
 }
 
 

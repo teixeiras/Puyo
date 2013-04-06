@@ -7,3 +7,6 @@
 //
 
 #include "EventCallback.h"
+template<class t> EventCallback<t>::EventCallback(void * other_arg, void * this_pointer):arg(other_arg),thisPointer(this_pointer)
+{
+}

@@ -7,8 +7,21 @@
 //
 
 #include "Event.h"
-Event::Event(int identifier, std::vector<void *> arguments)
+template<class t> Event<t>::Event(int identifier)
 {
     this->identifier = identifier;
-    this->arguments = arguments;
+}
+
+template<class t> void Event<t>::addObserver(EventCallback<t> obs)
+{
+    this->observers.push_back(obs);
+}
+
+template<class t> void Event<t>::execute()
+{
+    typename std::vector<EventCallback<t>>::iterator observersIt =observers.begin();
+    for (;observersIt != observers.end(); observersIt++) {
+        EventCallback<t> ev = * observersIt;
+        ev.call();
+    }
 }

@@ -24,8 +24,10 @@ class BoardView
     SDL_Thread * gameThread;
     bool isGameRunning;
     SDL_TimerID tickTimer, drawTimer;
+    SDL_Surface * puyo_image[5];
 public:
     BoardView(Board * board, GameInterface * gameInterface);
+    ~BoardView();
     void init();
     
     int tick();
@@ -39,7 +41,11 @@ public:
 
     void goLeft();
     void goRight();
+    void goDown();
     
+    void drawBackground();
+    void drawScore();
+    void drawPuyo();
     void drawAll();
     void gameOver();
     

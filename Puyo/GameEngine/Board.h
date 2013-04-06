@@ -16,6 +16,7 @@
 
 #include "Piece.h"
 #include "Puyo.h"
+#include "EventManager.h"
 class Board
 {
     Piece   pieces[BOARD_WIDTH][BOARD_HEIGHT];
@@ -36,8 +37,10 @@ public:
     
     bool hasCollided();
     
+    void detectCombinations();
     void moveLeft();
     void moveRight();
+    void moreStep();
     void moveOnDirection(int direction);
     void rotateLeft();
     void rotateRight();

@@ -11,7 +11,7 @@
 		80BC2FAF170E30AE00FBDEC5 /* Event.h in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F98170E307200FBDEC5 /* Event.h */; };
 		80BC2FB0170E30AE00FBDEC5 /* EventManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F99170E307200FBDEC5 /* EventManager.cpp */; };
 		80BC2FB1170E30AE00FBDEC5 /* EventManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F9A170E307200FBDEC5 /* EventManager.h */; };
-		80BC2FB2170E30AE00FBDEC5 /* EventObserver.h in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F9B170E307200FBDEC5 /* EventObserver.h */; };
+		80BC2FB2170E30AE00FBDEC5 /* EventCallback.h in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F9B170E307200FBDEC5 /* EventCallback.h */; };
 		80BC2FB3170E30AE00FBDEC5 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F9D170E307200FBDEC5 /* Board.cpp */; };
 		80BC2FB4170E30AE00FBDEC5 /* Board.h in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F9E170E307200FBDEC5 /* Board.h */; };
 		80BC2FB5170E30AE00FBDEC5 /* Piece.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2F9F170E307200FBDEC5 /* Piece.cpp */; };
@@ -31,7 +31,7 @@
 		80BC2FD1170F82F400FBDEC5 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC2FCF170F82F300FBDEC5 /* SoundManager.cpp */; };
 		80BC2FDD170F856F00FBDEC5 /* BANANASP.TTF in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD2170F856000FBDEC5 /* BANANASP.TTF */; };
 		80BC2FDE170F856F00FBDEC5 /* puyo_blue.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD3170F856000FBDEC5 /* puyo_blue.bmp */; };
-		80BC2FDF170F856F00FBDEC5 /* puyo_purple copy.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD4170F856000FBDEC5 /* puyo_purple copy.bmp */; };
+		80BC2FDF170F856F00FBDEC5 /* puyo_purple.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD4170F856000FBDEC5 /* puyo_purple.bmp */; };
 		80BC2FE0170F856F00FBDEC5 /* puyo_red.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD5170F856000FBDEC5 /* puyo_red.bmp */; };
 		80BC2FE1170F856F00FBDEC5 /* puyo_yellow.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD6170F856000FBDEC5 /* puyo_yellow.bmp */; };
 		80BC2FE2170F857B00FBDEC5 /* beggining_music.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80BC2FD8170F856100FBDEC5 /* beggining_music.wav */; };
@@ -45,6 +45,7 @@
 		80BC2FFA170F8E6100FBDEC5 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2FF7170F8E6100FBDEC5 /* SDL_mixer.framework */; };
 		80BC2FFB170F8E6100FBDEC5 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2FF8170F8E6100FBDEC5 /* SDL_ttf.framework */; };
 		80BC2FFC170F8E6100FBDEC5 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BC2FF9170F8E6100FBDEC5 /* SDL.framework */; };
+		80BC30011710449C00FBDEC5 /* EventCallback.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80BC30001710449C00FBDEC5 /* EventCallback.cpp */; };
 		80DA4E65170D87EB00FAF31C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E64170D87EB00FAF31C /* Cocoa.framework */; };
 		80DA4E68170D87F700FAF31C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E66170D87F700FAF31C /* CoreFoundation.framework */; };
 		80DA4E69170D87F700FAF31C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DA4E67170D87F700FAF31C /* Foundation.framework */; };
@@ -69,7 +70,7 @@
 				80BC2FE6170F857B00FBDEC5 /* turn_sound.wav in CopyFiles */,
 				80BC2FDD170F856F00FBDEC5 /* BANANASP.TTF in CopyFiles */,
 				80BC2FDE170F856F00FBDEC5 /* puyo_blue.bmp in CopyFiles */,
-				80BC2FDF170F856F00FBDEC5 /* puyo_purple copy.bmp in CopyFiles */,
+				80BC2FDF170F856F00FBDEC5 /* puyo_purple.bmp in CopyFiles */,
 				80BC2FE0170F856F00FBDEC5 /* puyo_red.bmp in CopyFiles */,
 				80BC2FE1170F856F00FBDEC5 /* puyo_yellow.bmp in CopyFiles */,
 				80BC2FCE170F4B9800FBDEC5 /* puyo_green.bmp in CopyFiles */,
@@ -87,7 +88,7 @@
 		80BC2F98170E307200FBDEC5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		80BC2F99170E307200FBDEC5 /* EventManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventManager.cpp; sourceTree = "<group>"; };
 		80BC2F9A170E307200FBDEC5 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
-		80BC2F9B170E307200FBDEC5 /* EventObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventObserver.h; sourceTree = "<group>"; };
+		80BC2F9B170E307200FBDEC5 /* EventCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCallback.h; sourceTree = "<group>"; };
 		80BC2F9D170E307200FBDEC5 /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
 		80BC2F9E170E307200FBDEC5 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		80BC2F9F170E307200FBDEC5 /* Piece.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Piece.cpp; sourceTree = "<group>"; };
@@ -112,7 +113,7 @@
 		80BC2FD0170F82F300FBDEC5 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		80BC2FD2170F856000FBDEC5 /* BANANASP.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BANANASP.TTF; sourceTree = "<group>"; };
 		80BC2FD3170F856000FBDEC5 /* puyo_blue.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_blue.bmp; sourceTree = "<group>"; };
-		80BC2FD4170F856000FBDEC5 /* puyo_purple copy.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "puyo_purple copy.bmp"; sourceTree = "<group>"; };
+		80BC2FD4170F856000FBDEC5 /* puyo_purple.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_purple.bmp; sourceTree = "<group>"; };
 		80BC2FD5170F856000FBDEC5 /* puyo_red.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_red.bmp; sourceTree = "<group>"; };
 		80BC2FD6170F856000FBDEC5 /* puyo_yellow.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = puyo_yellow.bmp; sourceTree = "<group>"; };
 		80BC2FD8170F856100FBDEC5 /* beggining_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beggining_music.wav; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		80BC2FF7170F8E6100FBDEC5 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_mixer.framework; sourceTree = "<group>"; };
 		80BC2FF8170F8E6100FBDEC5 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_ttf.framework; sourceTree = "<group>"; };
 		80BC2FF9170F8E6100FBDEC5 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL.framework; sourceTree = "<group>"; };
+		80BC30001710449C00FBDEC5 /* EventCallback.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventCallback.cpp; sourceTree = "<group>"; };
 		80DA4E64170D87EB00FAF31C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		80DA4E66170D87F700FAF31C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		80DA4E67170D87F700FAF31C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,7 +198,8 @@
 				80BC2F98170E307200FBDEC5 /* Event.h */,
 				80BC2F99170E307200FBDEC5 /* EventManager.cpp */,
 				80BC2F9A170E307200FBDEC5 /* EventManager.h */,
-				80BC2F9B170E307200FBDEC5 /* EventObserver.h */,
+				80BC2F9B170E307200FBDEC5 /* EventCallback.h */,
+				80BC30001710449C00FBDEC5 /* EventCallback.cpp */,
 			);
 			path = EventsManager;
 			sourceTree = "<group>";
@@ -249,7 +252,7 @@
 			children = (
 				80BC2FD2170F856000FBDEC5 /* BANANASP.TTF */,
 				80BC2FD3170F856000FBDEC5 /* puyo_blue.bmp */,
-				80BC2FD4170F856000FBDEC5 /* puyo_purple copy.bmp */,
+				80BC2FD4170F856000FBDEC5 /* puyo_purple.bmp */,
 				80BC2FD5170F856000FBDEC5 /* puyo_red.bmp */,
 				80BC2FD6170F856000FBDEC5 /* puyo_yellow.bmp */,
 				80BC2FD7170F856000FBDEC5 /* sounds */,
@@ -328,7 +331,7 @@
 				80BC2FAF170E30AE00FBDEC5 /* Event.h in Sources */,
 				80BC2FB0170E30AE00FBDEC5 /* EventManager.cpp in Sources */,
 				80BC2FB1170E30AE00FBDEC5 /* EventManager.h in Sources */,
-				80BC2FB2170E30AE00FBDEC5 /* EventObserver.h in Sources */,
+				80BC2FB2170E30AE00FBDEC5 /* EventCallback.h in Sources */,
 				80BC2FB3170E30AE00FBDEC5 /* Board.cpp in Sources */,
 				80BC2FB4170E30AE00FBDEC5 /* Board.h in Sources */,
 				80BC2FB5170E30AE00FBDEC5 /* Piece.cpp in Sources */,
@@ -344,6 +347,7 @@
 				80BC2FC5170E356800FBDEC5 /* StartScene.cpp in Sources */,
 				80BC2FCC170E3E5E00FBDEC5 /* Button.cpp in Sources */,
 				80BC2FD1170F82F400FBDEC5 /* SoundManager.cpp in Sources */,
+				80BC30011710449C00FBDEC5 /* EventCallback.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

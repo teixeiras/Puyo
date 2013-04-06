@@ -11,11 +11,23 @@
 
 #include <iostream>
 #include <vector>
+#include "EventCallback.h"
+
+template <class t>
 class Event
 {
     int identifier;
-    std::vector<void *> arguments;
+    std::vector<EventCallback<t>> observers;
 public:
-    Event(int identifier, std::vector<void *> arguments);
+    Event(int ident);
+    void addObserver(EventCallback<t> obs);
+    void execute();
+    bool isTypeof(int identifier){
+        if (this->identifier == identifier) {
+            return true;
+        }
+        return false;
+    }
+    std::vector<EventCallback<t>> * getObservers(){return &observers;};
 };
 #endif /* defined(__Puyo__Event__) */

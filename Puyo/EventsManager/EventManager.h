@@ -11,15 +11,17 @@
 
 #include <iostream>
 #include <vector>
-#include "EventObserver.h"
+#include "EventCallback.h"
 #include "Event.h"
+
+#define END_OF_GAME 1
 
 class EventManager
 {
-    std::vector<EventObserver *> *observers;
+    std::vector<Event<class t>> events;
 public:
     EventManager();
-    void addObserver(EventObserver * observer);
-    void sendEvent(Event * event);
+    void sendEvent(int identifier);
+    Event<class t> * getEvent(int identifier);
 };
 #endif /* defined(__Puyo__EventManager__) */

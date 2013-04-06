@@ -9,9 +9,17 @@
 #ifndef Puyo_EventObserver_h
 #define Puyo_EventObserver_h
 
-class EventObserver
+template<class type>
+class EventCallback
 {
-    virtual void update();
+    void * arg;
+    void * thisPointer;
+public:
+    EventCallback(void * other_arg, void * this_pointer);
+    void call() {
+        type * obj = static_cast<type*>(thisPointer);
+        obj->RedundencyManagerCallBack(arg);
+    }
 };
 
 #endif
